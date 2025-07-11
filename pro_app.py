@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import os
 import pickle
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1h7VsiZlMLxW8CaLsru-JzNBxHN7D-9Js"
 if not os.path.exists("health_model.pkl"):
