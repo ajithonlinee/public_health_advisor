@@ -1,6 +1,11 @@
 import streamlit as st
 import numpy as np
 import pickle
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1h7VsiZlMLxW8CaLsru-JzNBxHN7D-9Js"
+if not os.path.exists("health_model.pkl"):
+    r = requests.get(MODEL_URL)
+    with open("health_model.pkl", "wb") as f:
+        f.write(r.content)
 model = pickle.load(open("health_model.pkl", "rb"))
 st.set_page_config(page_title="Personal Health Advisor", page_icon="🩺")
 st.title("🩺 Personal Health Advisor")
